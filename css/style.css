@@ -1,0 +1,793 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top:-40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 2;
+}
+*:focus{
+  border: 2px solid black;
+}
+.skip a:focus{
+  top:0;
+  z-index: 2;
+}
+
+.flip-card :focus{
+  top:0;
+  z-index: 2;
+}
+
+.flip-card a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top:-40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 2;
+}
+
+.flip-card a:focus{
+  top:0;
+  z-index: 2;
+}
+
+a:link {
+  text-underline-position: none;
+}
+.container{
+  display: grid;
+  grid-row-gap: 15px;
+  grid-template-rows: 50px auto auto auto auto auto auto auto auto;
+  grid-template-columns: 10% auto 10%;
+  width: auto;
+}
+body{
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+}
+.banner {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    to { opacity: 1 }
+}
+
+
+.nav{
+   z-index: 1;
+   vertical-align: middle !important;
+   display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+            align-items: center;
+  /*Provided*/
+  background-color: white;
+  /*  padding-bottom: 20px;*/
+  /*padding-top: 20px;*/
+  text-align: right;
+  /*margin-top: 25px;*/
+    font-size: 21px;
+    /*text-align: center;*/
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+  position: fixed; /* Set the navbar to fixed position */
+  /*bottom: 0;*/ /* Position the navbar at the bottom of the page */
+  width: 100%; /* Full width */
+
+}
+nav ul{
+  list-style-type: none;
+
+}
+nav li{
+  /*Your code here */
+  /*padding-right: 10px;*/
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.active, nav li:hover {
+  /*background-color: grey;*/
+
+}
+
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav a:link, a:visited {
+  font-weight: bold;
+  color: #066;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  }
+
+.nav a:hover, a:active{
+  text-decoration: underline;
+  -webkit-transition: 0.5s ease;
+  background-color: #D9D9D9;
+  /*text-shadow: 0px -2px 0px rgba(0,0,0,1), 0 0 5px rgba(255,255,255,0.8),0 -4px 15px rgba(255,255,255,0.5);*/
+}
+
+.nav a.selected:hover, a.selected:active {
+    display: block;
+    background-color: #D9D9D9;
+    color: #fff;
+}
+
+.nav a.selected:link, a.selected:visited{
+  display: block;
+  background-color: #066;
+  background-color: #D9D9D9;
+  color: blue;
+}
+
+
+
+nav img{
+  background-color: white;
+  padding-top: 10px;
+  justify-self: left;
+  /*grid-column: 1/2;
+  grid-row: 1/auto;*/
+  max-height: 70px;
+  -webkit-animation-name: logo-wiggle;
+          animation-name: logo-wiggle;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+#home{
+  /*this is mobile view*/
+  padding-top: 300px;
+  /*padding-bottom: 200px;*/
+  background-attachment: fixed; /* Parallax effect */
+  background-image: url("../images/background4.jpg");
+  backface-visibility:
+  /*opacity: 0.1;*/
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 650px;                /* Parallax effect */
+  text-align: center;
+  background-color: black;
+  /*display: grid;*/
+  grid-column: 1/-1;
+  grid-row: 2/auto;
+}
+
+h1{
+  font-size: 100px;
+  line-height: 1;
+  padding-top: 30px 15px 15px 0px;
+  grid-column: 2/3;
+  grid-row: 2/auto;
+  text-align: center;
+  color: white;
+
+  vertical-align: center;
+  justify-items: center;
+  padding bottom: 30px;
+  align-self: center;
+  opacity: 1;
+  -webkit-animation-timing-function: ease; animation-timing-function: ease;
+ -webkit-animation-timing-function: ease-in; animation-timing-function: ease-in;
+
+}
+
+/*@import "nib"
+*/
+
+/*.slashed {
+  absolute: top 0 left 0 right 0 bottom 0;
+  text-shadow: 3px 3px 3px rgba(black, 0.5);
+  .top, .bot {
+    text-align: center;
+    font: 62px/100px arial;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    &:before {
+      content: attr(title);
+      transform: rotate(5deg);
+    }
+  }
+  .top {
+    absolute: top 0 left 5px right 0 bottom 50%;
+    &:before {
+      absolute: bottom -50px left 0 right 0;
+    }
+  }
+  .bot {
+    absolute: top 50% left 0 right 5px bottom 0;
+    &:before {
+      absolute: top -50px left 0 right 0;
+    }
+  }
+}*/
+
+
+/*.slashed {
+  transform: rotate(-5deg);
+  absolute: top 0 left 0 right 0 bottom 0;
+  text-shadow: 3px 3px 3px rgba(black, 0.5);
+}
+.top, .bot {
+  text-align: center;
+  font: 62px/100px arial;
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+.top, .bot &:before {
+    content: attr(title);
+    transform: rotate(5deg);
+  }
+
+.top {
+  absolute: top 0 left 5px right 0 bottom 50%;
+}
+.top &:before{
+  absolute: bottom -50px left 0 right 0;
+}
+.bot{
+  absolute: top 50% left 0 right 5px bottom 0;
+}
+.bot &:before{
+  absolute: top -50px left 0 right 0;
+}*/
+
+
+
+#home p{
+
+  color: white;
+  font-size: 24px;
+  padding: 100 100px;
+  text-align: center;
+  grid-column: 2/3;
+  grid-row: 2/auto;
+
+
+  vertical-align: center;
+  justify-items: center;
+  padding-top:30px;
+  align-self: center；
+  padding-bottom:30px;
+
+}
+
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+  padding-top: 30px;
+  -webkit-animation-timing-function: ease; animation-timing-function: ease;
+ -webkit-animation-timing-function: ease-in; animation-timing-function: ease-in;
+
+}
+
+
+h3{
+  font-size: 20px;
+  line-height: 1.5;
+  /*padding-top: 30px;*/
+  font-weight: bold;
+}
+
+p {
+  padding: 0 30px;
+  line-height: 50px;
+  font-size: 16px;
+}
+
+
+
+
+.about{
+  grid-column: 2/3;
+  grid-row: 4/auto;
+}
+
+/*.about img{
+  max-width: 400px;
+}*/
+
+.flip-card {
+      grid-column: 2/3;
+    grid-row: 3/auto;
+    justify-self: center;
+    overflow: hidden;
+    max-width: 400px;
+  background-color: transparent;
+  width: 500px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+ -webkit-transition: 0.6s;
+         transition: 0.6s;
+ -webkit-transform-style: preserve-3d;
+         transform-style: preserve-3d;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+/*transition: transform 0.8s;*/
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  /*transform: rotateY(180deg);*/
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+   -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+ -webkit-transition: 0.6s;
+         transition: 0.6s;
+ -webkit-transform-style: preserve-3d;
+         transform-style: preserve-3d;
+ position: absolute;
+
+}
+
+/* Style the front side (fallback if image is missing) */
+
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+   z-index: 2;
+ /*-webkit-transform: rotateY(0deg);*/
+         /*transform: rotateY(0deg);*/
+}
+
+
+/* Style the back side */
+.flip-card-back {
+  padding-top: 80px;
+  background-color: black;
+  color: white;
+  /*transform: rotateY(180deg);*/
+   /*-webkit-transform: rotateY(-180deg);*/
+         /*transform: rotateY(-180deg);*/
+}
+
+.vlog{
+  grid-column: 2/3;
+  grid-row: 5/auto;
+  margin: 5px;
+
+  float: left;
+  width: 180px;
+}
+
+.contact{
+  grid-column: 2/3;
+  grid-row: 7/auto;
+
+}
+
+.contactform{
+  /*padding:20px;*/
+  /*justify-self: center;*/
+}
+
+
+
+/*#namebox {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}*/
+
+input[type=text]{
+    grid-row: 8/auto;
+    width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+input[type=email] {
+    width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  padding-bottom: 20px;
+
+}
+iframe {
+display:none
+grid-template-rows: 55px 0px;
+padding-left: 20px;
+}
+
+
+@media print {
+  img{
+    display: none;
+  }
+
+  .navi{
+    display: none;
+  }
+
+}
+footer{
+  background-color: white;
+  color: white;
+  grid-column: 1 / -1;
+  grid-row: 9 / auto;
+  padding-top: 30px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+
+
+
+@media screen and (min-width: 300px){
+
+  #resume {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+
+  display: inline-block;
+  font-size: 16px;
+
+  margin-bottom: 30px;
+  }
+
+  .flip-card-back {
+  padding-top: 80px;
+  background-color: black;
+  color: white;
+  /*transform: rotateY(0deg);*/
+ /*  -webkit-transform: rotateY(-180deg);
+         transform: rotateY(-180deg);*/
+  }
+  .card > ul{
+    list-style: none;
+    padding: 0;
+  }
+
+  .card > ul li {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .card button{
+    width: 90%;
+    height: 40px;
+    border: 0;
+    margin-left: 12px;
+    border-radius: 7px;
+    background: #45ADAD;
+    color: white;
+    font-size: 1em;
+  }
+
+  .card h3{
+    font-size: 4em;
+    color: white;
+    text-align: center;
+  }
+
+  .card--big{
+    -webkit-transform: initial;
+            transform: initial;
+  }
+
+  /* Gallery! */
+
+  .gallery{
+    grid-column: 2/3;
+    grid-row: 6/auto;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+            justify-content: center;
+    min-height: 500px;
+  }
+
+  .gallery > img{
+    border: 10px #50C7C7 solid;
+    margin: 10px;
+    width: 300px;
+  }
+
+  /* Navbar */
+
+}
+
+
+
+@media screen and (min-width: 850px){
+
+  #home{
+    padding-top: 200px;
+    /*padding-bottom: 200px;*/
+    background-attachment: fixed; /* Parallax effect */
+    background-image: url("../images/background4.jpg");
+    backface-visibility:
+    /*opacity: 0.1;*/
+    background-position: center;  /* Parallax effect */
+    background-repeat: no-repeat; /* Parallax effect */
+    background-size: cover;       /* Parallax effect */
+    color: white;
+    height: 450px;                /* Parallax effect */
+    text-align: center;
+    /*background-color: #b3cde0;*/
+    /*display: grid;*/
+    grid-column: 1/-1;
+    grid-row: 2/auto;
+  }
+  /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card*/
+  /*https://www.w3schools.com/howto/howto_css_flip_card.asp*/
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  .flip-card {
+        grid-column: 2/3;
+      grid-row: 3/auto;
+      justify-self: center;
+      overflow: hidden;
+      max-width: 400px;
+    background-color: transparent;
+    width: 500px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    -webkit-backface-visibility: hidden;
+           backface-visibility: hidden;
+   -webkit-transition: 0.6s;
+           transition: 0.6s;
+   -webkit-transform-style: preserve-3d;
+           transform-style: preserve-3d;
+  }
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
+           backface-visibility: hidden;
+   -webkit-transition: 0.6s;
+           transition: 0.6s;
+   -webkit-transform-style: preserve-3d;
+           transform-style: preserve-3d;
+   position: absolute;
+
+  }
+
+  /* Style the front side (fallback if image is missing) */
+
+
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+     z-index: 2;
+   -webkit-transform: rotateY(0deg);
+           transform: rotateY(0deg);
+  }
+  iframe {
+    display: inline-block;
+  }
+
+
+  /* Style the back side */
+  .flip-card-back {
+  padding-top: 80px;
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+   -webkit-transform: rotateY(-180deg);
+         transform: rotateY(-180deg);
+  }
+
+
+
+
+  /* Navbar */
+
+  .nav{
+
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: flex-end;
+            align-items: flex-end;
+    background: #fff;
+    border-bottom: 3px solid #50C7C7;
+    vertical-align: middle !important;
+  }
+
+  .underbar{
+  width: 0;
+  height: 5px;
+  background: rgba(100,100,200,0);
+  //left: -50px;
+  top: 20px;
+  position: absolute;
+  -webkit-transition: 0.5s ease;
+  vertical-align: middle !important;
+  }
+
+  .nav-links{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  list-style: none;
+  }
+
+  .nav-item a{
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+  .nav-item a:hover, a:focus{
+  color: #50C7C7;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+  }
+  .nav a:link, a:visited {
+  font-weight: bold;
+  color: #066;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  }
+
+.nav a:hover, a:active{
+  text-decoration: underline;
+  -webkit-transition: 0.5s ease;
+  background-color: #D9D9D9;
+  /*text-shadow: 0px -2px 0px rgba(0,0,0,1), 0 0 5px rgba(255,255,255,0.8),0 -4px 15px rgba(255,255,255,0.5);*/
+}
+
+.nav a.selected:hover, a.selected:active {
+    display: block;
+    background-color: #D9D9D9;
+    color: #fff;
+}
+
+.nav a.selected:link, a.selected:visited{
+  display: block;
+  background-color: #066;
+  background-color: #D9D9D9;
+  color: blue;
+}
+}
+
+
+
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto;
+      animation: none;
+       /* Removes scroll animation */
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: initial;/* Your code here - set to default setting */
+    transition: initial;/* Your code here - set to default setting */
+    z-index: 1;
+  }
+  .skip a:focus{
+    top:0;
+  }
+  .fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+    from {
+        opacity: 1;
+        /*transform: translateY(50%);*/
+    }
+    to { opacity: 1 }
+}
+}
